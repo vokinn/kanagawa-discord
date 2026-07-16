@@ -1,0 +1,47 @@
+// Rosé Pine uses a pronounced lightening treatment for interactive states.
+// The shared theme darkens these states; use twice that magnitude in the
+// opposite direction so hover feedback is clearly visible on the dark palette.
+& {
+  --brand-530: #{lighten($brand, 10%)};
+  --brand-560: #{lighten($brand, 20%)};
+
+  --blurple-60: #{lighten($brand, 20%)};
+
+  --control-primary-background-hover: #{lighten($brand, 15%)};
+  --control-primary-background-active: #{lighten($brand, 25%)};
+
+  --control-secondary-background-hover: #{lighten($surface1, 10%)};
+  --control-secondary-background-active: #{lighten($surface1, 15%)};
+
+  --control-critical-primary-background-hover: #{lighten($red, 10%)};
+  --control-critical-primary-background-active: #{lighten($red, 20%)};
+  --control-critical-secondary-background-hover: #{lighten($red, 5%)};
+  --control-critical-secondary-background-active: #{lighten($red, 10%)};
+  --control-critical-secondary-border-hover: #{lighten($red, 5%)};
+  --control-critical-secondary-border-active: #{lighten($red, 5%)};
+
+  --control-connected-background-hover: #{lighten($green, 10%)};
+  --control-connected-background-active: #{lighten($green, 15%)};
+  --control-connected-border-hover: #{lighten($green, 5%)};
+  --control-connected-border-active: #{lighten($green, 5%)};
+
+  --button-outline-brand-background-hover: #{lighten($brand, 5%)};
+  --button-outline-brand-border-active: #{lighten($brand, 5%)};
+
+  --interactive-background-hover: #{adjust-color($surface2, $alpha: -0.7)};
+}
+
+button.vc-btn-primary,
+button[class^="button_"][class*=" primary_"] {
+  &:hover {
+    background-color: #{lighten($brand, 15%)} !important;
+  }
+
+  &:active {
+    background-color: #{lighten($brand, 25%)} !important;
+  }
+}
+
+label[class^="container_"] > div[data-mana-component="switch"]:hover {
+  background-color: #{lighten($surface2, 10%)} !important;
+}
